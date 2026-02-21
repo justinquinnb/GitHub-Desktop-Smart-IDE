@@ -10,8 +10,13 @@ def open_preferred_launcher():
     with open(jqb_config, "r") as config_file:
         config_data = yaml.safe_load(config_file)
 
-    ide_executable = config_data["default_ide_executable"]
-    subprocess.run([ide_executable, target_path])
+    try:
+        ide_executable = config_data["default_ide"]
+        subprocess.run([ide_executable, target_path])
+    except KeyError:
+        print("ERROR: No default IDE configured.")
+    except Exception as e:
+        print(f"ERROR: {e}")
 
 if __name__ == "__main__":
     open_preferred_launcher()
