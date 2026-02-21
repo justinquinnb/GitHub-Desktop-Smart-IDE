@@ -11,10 +11,10 @@ def open_preferred_launcher():
         config_data = yaml.safe_load(config_file)
 
     try:
-        ide_executable = config_data["default_ide"]
+        ide_executable = config_data["preferred_ide"]
         subprocess.run([ide_executable, target_path])
     except KeyError:
-        print("ERROR: No default IDE configured.")
+        print("ERROR: No preferred IDE configured.")
     except Exception as e:
         print(f"ERROR: {e}")
 
