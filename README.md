@@ -6,8 +6,7 @@ specified by [JQB DevTools](https://github.com/justinquinnb/JQB-DevTools).
 ## Installation
 1. Clone this repository
 2. Use your package manager of choice to install dependencies
-3. Build the project with your build tool of choice
-4. Package the wheel in an executable with a program like `pyinstaller`
+3. Create an executable of the project with your tool of choice, like `pyinstaller` (`pyinstaller main.py --onefile`)
 5. Copy the executable into your desired location
 
 ## Setup
